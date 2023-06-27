@@ -26,12 +26,17 @@ public class UserDaoTest {
             UserDao mapper = this.sqlSession.getMapper(UserDao.class);
             
             //Setup Environment
+            System.out.println("Delete table if exists:");
             mapper.checkTable("TESTNEW");
+            System.out.println("Create table:");
             mapper.createTable("TESTNEW");
+            System.out.println("Delete trigger if exists:");
             mapper.checkTrigger();
+            System.out.println("Create trigger to record update time:");
             mapper.createTrigger("TESTNEW");
             
             //Setup Table
+            System.out.println("Add user Anny:");
             mapper.addUser("TESTNEW", "Anny", 12);
             
             List<User> userList = mapper.getAllUsers("TESTNEW");
@@ -43,6 +48,7 @@ public class UserDaoTest {
             }
             System.out.println();
             
+            System.out.println("Add user Tom:");
             mapper.addUser("TESTNEW", "Tom", 18);
             
             userList = mapper.getAllUsers("TESTNEW");
@@ -54,6 +60,7 @@ public class UserDaoTest {
             }
             System.out.println();
             
+            System.out.println("Add user Jessica:");
             mapper.addUser("TESTNEW", "Jessica", 36);
             
             userList = mapper.getAllUsers("TESTNEW");
@@ -65,6 +72,7 @@ public class UserDaoTest {
             }
             System.out.println();
             
+            System.out.println("Add user Jack:");
             mapper.addUser("TESTNEW", "Jack", 20);
             
             userList = mapper.getAllUsers("TESTNEW");
@@ -76,6 +84,7 @@ public class UserDaoTest {
             }
             System.out.println();
             
+            System.out.println("Add user Catherine:");
             mapper.addUser("TESTNEW", "Catherine", 10);
             
             userList = mapper.getAllUsers("TESTNEW");
@@ -88,6 +97,7 @@ public class UserDaoTest {
             System.out.println();
             
             //Perform Query
+            System.out.println("Find users who are under 20:");
             userList = mapper.getUserList("TESTNEW");
             itr = userList.iterator();
             
