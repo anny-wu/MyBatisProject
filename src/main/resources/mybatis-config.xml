@@ -16,4 +16,7 @@
             </dataSource>
         </environment>
     </environments>
+    <mappers>
+        <mapper resource="com/annyw/dao/UserMapper.xml"/>
+    </mappers>
 </configuration>
